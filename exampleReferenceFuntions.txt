@@ -1,0 +1,70 @@
+#include "stdafx.h"
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+//write a progam with two fucntions that gets the area and perimeter of both a circle and a square 
+float getSqr(float side, float &perimeter)
+{
+	//create a formula to find the area of the square
+	float area;
+	area = side * side;
+
+	//create a formula to find the perimeter of the square
+	perimeter = 4 * side;
+
+	return area;
+}
+
+float getCir(float radius, float &perimeter)
+{
+	const float PI = 3.1415926;
+
+	//create the formula to find the area of a circle 
+	float area;
+	area = radius * radius * PI;
+
+	//create the formula to find the perimeter of the circle 
+	perimeter = 2 * PI * radius;
+
+	return area;
+}
+
+//ask the user to eenter either circle or Square and call the functions that display the values  
+int _tmain(int argc, _TCHAR* argv[]) 
+{
+	//establish the variables
+	string shape;
+	float value, area, perimeter;
+
+	//ask the user to enter either C or S to get the area or perimeter of a square or a circle 
+	cout << "Please enter either circle or square ";
+	cin >> shape;
+
+	//have the user enter the length of the side or the radius 
+	cout << "Enter the length of the side or the radius ";
+	cin >> value;
+
+	//get the area and the perimeter of the square or circle 
+	if (shape == "circle")
+	{
+		//call the getCir funtion
+		area = getCir(value, perimeter);
+	}
+	else 
+		if (shape == "square")
+		{
+			//call the get square function 
+			area = getSqr(value, perimeter);
+		}
+		else
+		{
+			cout << "Invalid input " << endl;
+		}
+
+		//display the area and perimeter
+		cout << "for a " << shape << "area is " << area << " and perimeter is " << perimeter << endl;
+	system("pause");
+	return 0;
+}

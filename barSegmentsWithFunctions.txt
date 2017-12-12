@@ -1,0 +1,31 @@
+//draws a bar n degments laong 
+//using iteration 
+void segments1(int n)
+{
+	while (n > 0)
+	{
+		cout << "*";
+		n--;
+	}
+	cout << endl;
+}
+
+//draw a bar n segments long 
+//using itereation 
+void segments2(int n)
+{
+	if (n > 0)
+	{
+		cout << "*";
+		segments2(n - 1);
+	}
+	else
+		cout << endl;
+}
+
+//display the bars 
+int main()
+{
+	segments1(3);
+	segments2(8);
+}

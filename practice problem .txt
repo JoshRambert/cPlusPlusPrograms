@@ -1,0 +1,54 @@
+#include <iostream>
+
+using namespace std;
+
+int getValue();
+int rectangle(int length, int width, int & perimeter);
+float circle(int diameter, float & circumference);
+
+int main()
+{
+    cout << endl << endl << endl << "Enter the length and width of your rectangle as positive integers: ";
+    int length;
+    length = getValue();
+    int width;
+    width = getValue();
+    int perimeter;
+	int rectArea  = rectangle(length, width, perimeter) ;
+    cout << "Your rectangle has area of " <<  rectArea << " and perimeter of " << perimeter << endl;
+
+	cout << endl << endl << "Enter the diameter of your circle: ";
+	int diameter;
+	diameter = getValue();
+	float circumference;
+	float circleArea = circle(diameter, circumference);
+
+	cout << "Your circle has area of " <<  circleArea << " and circumference of " << circumference << endl;
+
+
+    return 0;
+}
+int getValue()
+{
+	int value;
+	do {
+		cin >> value;
+		if ( value < 1 )
+			cout << " invalid value, re-enter: ";
+	} while (value < 1 );
+	return value;
+}
+
+int rectangle(int length, int width, int & perimeter)
+{
+	perimeter = 2 * length + 2 * width;
+	return length * width;
+
+}
+float circle(int diameter, float & circumference)
+{
+	const float PI = 3.14159;
+	circumference = diameter * PI;
+	float radius = diameter / 2.0;
+	return radius * radius * PI;
+}

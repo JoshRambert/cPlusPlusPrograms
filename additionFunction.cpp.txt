@@ -1,0 +1,52 @@
+#include "stdafx.h"
+#include <iostream>
+
+using namespace std;
+
+int getNumber()
+{
+	int value;
+	do
+	{
+		cout << "Enter a positive integer" << endl;
+		cin >> value;
+		if (value <= 0)
+		{
+			cout << "Not positive enough!" << endl;
+			cin.clear();
+			cin.ignore(100, '\n');
+		}
+	} while (value <= 0);
+	return value;
+}
+
+int adder(int a, int b)
+{
+	return a + b;
+}
+
+void output(int value)
+{
+	cout << "The sum is " << value << endl;
+	return;
+}
+
+
+int main()
+{
+	int num1, num2;
+	int sum;
+
+	// input
+	num1 = getNumber();
+	num2 = getNumber();
+
+	//calculate
+	sum = adder(num1, num2);
+
+	// output
+	output(sum);
+
+	system("pause");
+	return 0;
+}

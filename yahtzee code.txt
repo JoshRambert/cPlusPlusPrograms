@@ -1,0 +1,172 @@
+//create the funcitons that get the values of each roll
+int scoreOnes(int ones, int twos, int threes, int fours, int fives, int sixes)
+{
+	//establish the vaariables
+	int sum;
+	sum = ones * 1;
+	
+	return sum;
+}
+
+int scoreTwos(int ones, int twos, int threes, int fours, int fives, int sixes)
+{
+	//establish the variables 
+	int sum;
+	sum = twos * 2;
+
+	return sum;
+}
+
+int scoreThrees(int ones, int twos, int threes, int fours, int fives, int sixes)
+{
+	//establish the variables 
+	int sum;
+	sum = threes * 3;
+
+	return sum;
+}
+
+int scoreFours(int ones, int twos, int threes, int fours, int fives, int sixes)
+{
+	//establish the variables 
+	int sum;
+	sum = fours * 4;
+
+	return sum;
+}
+
+int scoreFives(int ones, int twos, int threes, int fours, int fives, int sixes)
+{
+	//establish 
+	int sum;
+	sum = fives * 5;
+
+	return sum;
+}
+
+int scoreSixes(int ones, int twos, int threes, int fours, int fives, int sixes)
+{
+	//establish 
+	int sum;
+	sum = sixes * 6;
+
+	return sum;
+}
+
+int scoreThreeOfAKind( int ones, int twos, int threes, int fours, int fives, int sixes)
+{
+	//establish the variables 
+	int sum;
+	if (ones >= 3 || twos >= 3 || threes >= 3 || fours >= 3 || fives >= 3 || sixes >= 3)
+	{
+		sum = ones + twos + threes + fours + fives + sixes;
+		return sum;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+int scoreFourOfAKind(int ones, int twos, int threes, int fours, int fives, int sixes)
+{
+	//establish the variables 
+	int sum;
+	if (ones >= 4 || twos >= 4 || threes >= 4 || fours >= 4 || fives >= 4 || sixes >= 4)
+	{
+		sum = ones + twos + threes + fours + fives + sixes;
+		return sum;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+int scoreFullHouse(int ones, int twos, int threes, int fours, int fives, int sixes)
+{
+	 //establish the variables 
+	int sum; 
+	if (ones == 3 || twos == 3 || threes == 3 || fours == 3 || fives == 3 || sixes == 3
+		&& ones == 2 || twos == 2 || threes == 2 || fours == 2 || fives == 2 || sixes == 2)
+	{
+		sum = ones + twos + threes + fours + fives + sixes;
+		return sum;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+int scoreSmallStraight(int ones, int twos, int threes, int fours, int fives, int sixes)
+{
+	//establish the variables 
+	int sum = 30;
+	if (ones == 1 || twos == 1 || threes == 1 || fours == 1)
+	{
+		return sum;
+	}
+	else if (twos == 1 || threes == 1 || fours == 1 || fives == 1)
+	{
+		return sum;
+	}
+	else if (threes == 1 || fours == 1 || fives == 1 || sixes == 1)
+	{
+		return sum;
+	}
+	else
+	{
+		return 0;
+	}
+
+}
+
+int scoreLargeStraight(int ones, int twos, int threes, int fours, int fives, int sixes)
+{
+	//estbablish the variables 
+	int sum = 40;
+	if (ones == 1 || twos == 1 || threes == 1 || fours == 1 || fives == 1)
+	{
+		return sum;
+	}
+	else if (twos == 1 || threes == 1 || fours == 1 || fives == 1 || sixes == 1)
+	{
+		return sum;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+int scoreYahtzee(int ones, int twos, int threes, int fours, int fives, int sixes)
+{
+	//establish the variables
+	int sum = 50;
+	if (ones == 5 || twos == 5 || threes == 5 || fours == 5 || fives == 5 || sixes == 5)
+	{
+		return sum;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+int scoreChance(int ones, int twos, int threes, int fours, int fives, int sixes)
+{
+	//establish the variables
+	int sum;
+	sum = ones + twos + threes + fours + fives + sixes;
+
+	return sum;
+}
+
+int scoreOption(int ones, int twos, int threes, int fours, int fives, int sixes, int &dice)
+{
+	//establish the variables
+	int sum = ones + twos + threes + fours + fives + sixes;
+
+	return sum;
+}

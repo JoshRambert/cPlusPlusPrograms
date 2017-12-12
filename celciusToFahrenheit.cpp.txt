@@ -1,0 +1,59 @@
+#include "stdafx.h"
+#include <iostream>
+
+using namespace std;
+
+//function to convert celcius to fahrenheit  
+double get_fahr(double temp)
+{
+	//establish variables and create the conversion formula 
+	double fahr;
+	fahr = (temp - 32.0) * (5.0 / 9.0);
+	return fahr;
+
+}
+//convert to fahrenheit to celcius  
+double get_celcs(double temp)
+{
+	//establish variables and create the conversion formula 
+	double celcs;
+	celcs = (temp * 9.0 / 5.0) + 32.0;
+	return celcs;
+}
+//get the temperature and display th convrsions 
+int main()
+{
+	//establish variables
+	double input;
+	double fahr;
+	double celcs;
+	char conv;
+
+	// have the user enter an input and whether or not to convert it to celcius or fahrenheit
+	cout << "Please enter a temperature ";
+	cin >> input;
+
+	//have the user enter which type of unit to convert it to
+	cout << "Convert to...(Enter either F or C) ";
+	cin >> conv;
+
+	if (conv == 'F' || conv == 'f')
+	{
+		//get the conversion 
+		celcs = get_celcs(input);
+
+		//display the temperature
+		cout << input << " Degrees Celcius converted to fahrenheit is " << celcs << endl;
+	}
+	else if (conv == 'C' || conv =='c')
+	{
+		//get the conversion
+		fahr = get_fahr(input);
+
+		//display the temperature 
+		cout << input << " Degrees fahrenheit converted to celcius is " << fahr << endl;
+	} 
+
+	system("pause");
+	return 0;
+}
